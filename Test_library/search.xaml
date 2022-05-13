@@ -1,0 +1,292 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="search" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:ra="clr-namespace:ReporterForUiPath.Activities;assembly=ReporterForUiPath.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Location" Type="InArgument(x:String)" />
+    <x:Property Name="Hotel" Type="InArgument(x:String)" />
+    <x:Property Name="Room_Type" Type="InArgument(x:String)" />
+    <x:Property Name="Number_of_Rooms" Type="InArgument(x:String)" />
+    <x:Property Name="Check_In_Date" Type="InArgument(x:String)" />
+    <x:Property Name="Check_Out_Date" Type="InArgument(x:String)" />
+    <x:Property Name="Adults_Per_Room" Type="InArgument(x:String)" />
+    <x:Property Name="Childrens_Per_Room" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>600,3732.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>search_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>ReporterForUiPath.Enums</x:String>
+      <x:String>ReporterForUiPath.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="search" sap:VirtualizedContainerService.HintSize="476,3668" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Adactin.com - Search Hotel" sap:VirtualizedContainerService.HintSize="434,3576" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="728cb3a6-c02e-48d7-8258-6f2404b3041f" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,3358" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NSelectItem DelayAfter="1" DisplayName="Select Item 'Location*'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[Location]" ScopeIdentifier="728cb3a6-c02e-48d7-8258-6f2404b3041f" Version="V1">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="9">
+                  <x:String>- Select Location -</x:String>
+                  <x:String>Sydney</x:String>
+                  <x:String>Melbourne</x:String>
+                  <x:String>Brisbane</x:String>
+                  <x:String>Adelaide</x:String>
+                  <x:String>London</x:String>
+                  <x:String>New York</x:String>
+                  <x:String>Los Angeles</x:String>
+                  <x:String>Paris</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="http://adactinhotelapp.com/SearchHotel.php" DesignTimeRectangle="245, 520, 375, 38" ElementType="DropDown" FriendlyName="'- Select Location -'" FullSelectorArgument="&lt;webctrl tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SELECT' type='' aaname='' /&gt;" Guid="8dd13bb3-2fd0-4bb2-90cf-945d1fd9f9f5" ImageBase64="" InformativeScreenshot="0128d6b2add7d587e1fdf16a359901ea.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Adactin.com - Search Hotel' /&gt;" SearchSteps="Selector">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="11, 517, 231, 44" FriendlyName="'Location*'" FullSelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' aaname='Location ' check:text='Location*' /&gt;" ImageBase64="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" SearchSteps="Selector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" Description="Select Location" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="334,134.666666666667" sap2010:WorkflowViewState.IdRef="StepStatus_1" Name="Location" Status="Compare" TakeScreenshot="True" />
+            <uix:NSelectItem DelayAfter="1" DisplayName="Select Item 'Hotels'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="[Hotel]" ScopeIdentifier="728cb3a6-c02e-48d7-8258-6f2404b3041f" Version="V1">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="5">
+                  <x:String>- Select Hotel -</x:String>
+                  <x:String>Hotel Creek</x:String>
+                  <x:String>Hotel Sunshine</x:String>
+                  <x:String>Hotel Hervey</x:String>
+                  <x:String>Hotel Cornice</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="http://adactinhotelapp.com/SearchHotel.php" DesignTimeRectangle="245, 563, 375, 38" ElementType="DropDown" FriendlyName="'- Select Hotel -'" FullSelectorArgument="&lt;webctrl id='hotels' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='hotels' tag='SELECT' type='' aaname='' /&gt;" Guid="98e97e2f-cda1-4b21-a2a4-d175508ecc7b" ImageBase64="" InformativeScreenshot="b07acd46f6e853c92c4d8d9d492bf9be.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Adactin.com - Search Hotel' /&gt;" SearchSteps="Selector">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="11, 560, 231, 44" ElementType="Text" FriendlyName="'Hotels'" FullSelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tag='TD' type='' aaname='Hotels ' check:text='Hotels' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOsAAAAwCAYAAADw8405AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAR9SURBVHhe7drNK3xRHMfx3x9gY2VlxUoWilhYCEUkrJWHspDYeErZWFGKko2HlCyUnZSSwkYWHgoL8pQoIQ+ztfz+7ufcc6c7M3dm7rjc3/nlc+oVzZxzjPq9f+e6M3+cIdb4/PyUSCRCRAbSqTJWItPpVBkrkel0qoyVyHQ6VcZKZDqdKmMlMp1OlbESmU6nyliJTKdTZaxEptOpMlYi0+lUGSuR6XSqjJXIdDpVxkpkOp0qYyUynU6VsRKZTqfKWIlMp1NlrESZOjw8lMLCQuno6JCnpyfPOd9Jp8pYKVzz8/P4x6e+ej0PCAAhYN7m5qbnnH+JsdKvEHasPxEWY6VfgbFmToWKwVgpTIw1cypUDMZKYfqOWB8fH2VyclKKi4vVnNzcXGlvb1cRuec5P8tLfGjv7++yvr4uTU1Nkp2dreZUVFTI8vKyvL6+xuybKtbT01MZHByU/Px8tQf2wp6Li4vy8PAQM9cvax97MFYKU9BYr66upL6+Xj0XD9Eiro+PDzXXb6yIcXR01HMe4Dl3sMli3dvbU4977QGpfudUrLX2YKwUplQBeXHHimD6+/vV452dnXJ+fq7CRDBzc3MqVpy2R0dH0TV+Lllx6mVlZUllZaXs7OyoUxbwPR7LycmR7e3t6HyvPZ+fn6Wrq0vNXVpaUqc/Hn95eZGTkxMZGxtT/5E4e2TC+n3twVgpTEFidSJpaGiQu7u7mH0R7fT0tFqDMOLXJIsV+2C/srIydQkb//za2poKeWRkJHpie+15e3srVVVV6tL5+vo6Zo+grN/JHoyVwuTEmuqSEAEgBMxzx7qyspIQo9vBwYEUFBTERJQuVly65uXlSV9fn7y9vSU8f3Z2JqWlpWn3dL/m3t7e6Knv3uurrD3twVgpTEFiTbcWJxpONpxwOOnwWLpYsT/2TKempiZ6mifbE5fNeNxZg8vy5uZmmZmZib6er7D2sgdjpTD9r7H63RN3fPE3a0tLS/SOMGA+TnH3XL+s9fZgrBSmILH+xGXw7u6uuik0PDzs+7I13Z4O7Hd5eSkDAwPqdXd3d6sbTl5zU7HW2oOxUpiCxOpEUldXp97Cca9JdoPp+PhYioqKpLGxUe7v72PWwM3NjVRXV6vLXIQV/7wXv7E6Mp0fD52qwVgpTEFidb9109bW5uutG/ydiRBxeuJkxlsyznPgjry2tlY2NjaiQWHuxcWFzM7OqtPRedwrPlwi9/T0yOrqqrocd34O3sLB/rijPDQ05HkTKx3rtdmDsVKYgsQKmXwoAvD9+Ph4wlx3aPiKy+D4OW7u+clixd+1XmsBbw1hnfO6MmGttwdjpTAFjRX8ftzQgf2mpqZi5uOkxAcZnDk4Cbe2tqS1tTXho4ILCwsxl91esWL9/v6++qhhSUmJWg/l5eUyMTHBu8FEv4FOlbESmU6nyliJTKdTZaxEptOpMlYi0+lUGSuR6XSqjJXIdDpVxkpkOp0qYyUynU6VsRKZTqfKWIlMp1NlrESm06kyViLT6VQZK5HpdKqMlchsEfkLfX8t39VycD4AAAAASUVORK5CYII=" SearchSteps="Selector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" Description="Select Hotel" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="334,134.666666666667" sap2010:WorkflowViewState.IdRef="StepStatus_2" Name="Hotel" Status="Compare" TakeScreenshot="True" />
+            <uix:NSelectItem DelayAfter="1" DisplayName="Select Item 'Room Type'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="[Room_Type]" ScopeIdentifier="728cb3a6-c02e-48d7-8258-6f2404b3041f" Version="V1">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="5">
+                  <x:String>- Select Room Type -</x:String>
+                  <x:String>Standard</x:String>
+                  <x:String>Double</x:String>
+                  <x:String>Deluxe</x:String>
+                  <x:String>Super Deluxe</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="http://adactinhotelapp.com/SearchHotel.php" DesignTimeRectangle="245, 607, 375, 38" ElementType="DropDown" FriendlyName="'- Select Room Type -'" FullSelectorArgument="&lt;webctrl id='room_type' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='room_type' tag='SELECT' type='' aaname='' /&gt;" Guid="8abefeba-1f2a-4512-8e3f-cb234f9e0cf5" ImageBase64="" InformativeScreenshot="88b81c275b10e7af31500c7792a37796.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Adactin.com - Search Hotel' /&gt;" SearchSteps="Selector">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="11, 604, 231, 44" ElementType="Text" FriendlyName="'Room Type'" FullSelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableRow='4' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' aaname='Room Type ' check:text='Room Type' /&gt;" ImageBase64="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" SearchSteps="Selector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" Description="Select Room Type" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="334,134.666666666667" sap2010:WorkflowViewState.IdRef="StepStatus_3" Name="Room Type" Status="Compare" TakeScreenshot="True" />
+            <uix:NSelectItem DelayAfter="1" DisplayName="Select Item 'Number of Rooms*'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NSelectItem_4" Item="[Number_of_Rooms]" ScopeIdentifier="728cb3a6-c02e-48d7-8258-6f2404b3041f" Version="V1">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="11">
+                  <x:String>- Select Number of Rooms -</x:String>
+                  <x:String>1 - One</x:String>
+                  <x:String>2 - Two</x:String>
+                  <x:String>3 - Three</x:String>
+                  <x:String>4 - Four</x:String>
+                  <x:String>5 - Five</x:String>
+                  <x:String>6 - Six</x:String>
+                  <x:String>7 - Seven</x:String>
+                  <x:String>8 - Eight</x:String>
+                  <x:String>9 - Nine</x:String>
+                  <x:String>10 - Ten</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="http://adactinhotelapp.com/SearchHotel.php" DesignTimeRectangle="245, 650, 375, 38" ElementType="DropDown" FriendlyName="'1 - One'" FullSelectorArgument="&lt;webctrl id='room_nos' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='room_nos' tag='SELECT' type='' aaname='' /&gt;" Guid="57609111-f359-4635-b331-938222b4c71f" ImageBase64="" InformativeScreenshot="c7d08839e35927605e253dbb88f6e042.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Adactin.com - Search Hotel' /&gt;" SearchSteps="Selector, FuzzySelector">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="11, 647, 231, 44" FriendlyName="'Number of Rooms*'" FullSelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' aaname='Number of Rooms ' check:text='Number of Rooms*' /&gt;" ImageBase64="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" SearchSteps="Selector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" Description="Select Number of Rooms" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="334,134.666666666667" sap2010:WorkflowViewState.IdRef="StepStatus_4" Name="Number of Rooms" Status="Compare" TakeScreenshot="True" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Check In Date*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,220" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="728cb3a6-c02e-48d7-8258-6f2404b3041f" Text="[Check_In_Date]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="http://adactinhotelapp.com/SearchHotel.php" DesignTimeRectangle="245, 694, 380, 47" ElementType="InputBox" FriendlyName="'INPUT datepick_in'" FullSelectorArgument="&lt;webctrl id='datepick_in' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='datepick_in' tag='INPUT' type='text' aaname='' /&gt;" Guid="eb2b77c6-93bb-4748-b829-e8c66b598dc7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAYAAAAAzCAYAAACe7t/QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAD/SURBVHhe7dWxDcMwEARBV82y2YIMJoZEuQLuDHDZx7+fOedlZma9CYCZWXQCYGYW3SsAYwwzMztw+79/BGAdAHCmPQK/AHj+AOe7R0AAAEIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAov4GQAQAznZ//muPAKytAzMzO2/7v38FwMzMGhMAM7Pk5vUFmiT1RNalZeEAAAAASUVORK5CYII=" InformativeScreenshot="9aebf40228dff1666890f06766a093ff.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Adactin.com - Search Hotel' /&gt;" SearchSteps="Selector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="11, 691, 231, 53" FriendlyName="'Check In Date*'" FullSelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl tableRow='6' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' aaname='Check In Date ' check:text='Check In Date*' /&gt;" ImageBase64="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" SearchSteps="Selector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" Description="Select Check In Date" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="334,134.666666666667" sap2010:WorkflowViewState.IdRef="StepStatus_5" Name="Check In Date" Status="Compare" TakeScreenshot="True" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Check Out Date*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,220" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="728cb3a6-c02e-48d7-8258-6f2404b3041f" Text="[Check_Out_Date]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="http://adactinhotelapp.com/SearchHotel.php" DesignTimeRectangle="245, 746, 380, 47" ElementType="InputBox" FriendlyName="'INPUT datepick_out'" FullSelectorArgument="&lt;webctrl id='datepick_out' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='datepick_out' tag='INPUT' type='text' aaname='' /&gt;" Guid="b4e7d0d2-e594-4ae9-be94-ad949e2aa3a2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAYAAAAAzCAYAAACe7t/QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHBSURBVHhe7dgxiutAEEVRLcGxtqqtaA/OtCclxmBDZ+qh+k+Lz+BJJlPXOXDBIMf1kKbH41Gj5/NZX69Xfb/fkqQBixsft77f/TYApZQKQA5x89sA/Dz++77Xbdvq/X6XJA1Q3PS47f+L2z99/67HcdRlWertdpMkDVjc+Lj13TkAjr8kjV/c+q4NQLwa9IfzPNd1XT++RkiSrlfc9Ljt/c73z0FtAOL7UH8QfwRgLHHb+52Pmx/aAMRC9AfxG4CxfLrzBgAgAQMAkJQBAEjKAAAkZQAAkjIAAEkZAICk/jQA0zS1ALguAwCQlAEASMoAACRlAACSMgAASRkAgKQMAEBSBgAgKQMAkJQBAEjKAAAkZQAAkjIAAEkZAICkDABAUgYAICkDAJCUAQBIygAAJGUAAJIyAABJ/WkAALg+AwCQlAEASMoAACRlAACSMgAASRkAgKQMAEBSBgAgqV8HYNu288G6ru0BAOOI297vfNz80AZg3/fzwTzP7Y+xEJKk6xc3PW57v/Nx888BCMuynA8lSWMWt747B+A4DiMgSQMXNz5ufTeVUr5//hOvBvF96NNrhCTpesVN7599ulJK/QJSa5gaoJNQ9QAAAABJRU5ErkJggg==" InformativeScreenshot="06a5244d6e560bed9c03f0e1df059888.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Adactin.com - Search Hotel' /&gt;" SearchSteps="Selector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="11, 743, 231, 53" FriendlyName="'Check Out Date*'" FullSelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl tableRow='7' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' aaname='Check Out Date ' check:text='Check Out Date*' /&gt;" ImageBase64="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" SearchSteps="Selector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" Description="Select Check Out Date" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="334,134.666666666667" sap2010:WorkflowViewState.IdRef="StepStatus_6" Name="Check Out Date" Status="Compare" TakeScreenshot="True" />
+            <uix:NSelectItem DelayAfter="1" DisplayName="Select Item 'Adults per Room*'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NSelectItem_5" Item="[Adults_Per_Room]" ScopeIdentifier="728cb3a6-c02e-48d7-8258-6f2404b3041f" Version="V1">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="5">
+                  <x:String>- Select Adults per Room -</x:String>
+                  <x:String>1 - One</x:String>
+                  <x:String>2 - Two</x:String>
+                  <x:String>3 - Three</x:String>
+                  <x:String>4 - Four</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="http://adactinhotelapp.com/SearchHotel.php" DesignTimeRectangle="245, 799, 375, 38" ElementType="DropDown" FriendlyName="'1 - One'" FullSelectorArgument="&lt;webctrl id='adult_room' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='adult_room' tag='SELECT' type='' aaname='' /&gt;" Guid="4c5428d2-bcea-4a8c-a9e2-11b3f01b9133" ImageBase64="" InformativeScreenshot="101200637ba0a588b7d53ad85131be5f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Adactin.com - Search Hotel' /&gt;" SearchSteps="Selector">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="11, 796, 231, 44" FriendlyName="'Adults per Room*'" FullSelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl tableRow='8' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' aaname='Adults per Room ' check:text='Adults per Room*' /&gt;" ImageBase64="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" SearchSteps="Selector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" Description="Select Adults Per Room" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="334,134.666666666667" sap2010:WorkflowViewState.IdRef="StepStatus_7" Name="Adults Per Room" Status="Compare" TakeScreenshot="True" />
+            <uix:NSelectItem DelayAfter="1" DisplayName="Select Item 'Children per Room'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NSelectItem_6" Item="[Childrens_Per_Room]" ScopeIdentifier="728cb3a6-c02e-48d7-8258-6f2404b3041f" Version="V1">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="5">
+                  <x:String>0 - None</x:String>
+                  <x:String>1 - One</x:String>
+                  <x:String>2 - Two</x:String>
+                  <x:String>3 - Three</x:String>
+                  <x:String>4 - Four</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="http://adactinhotelapp.com/SearchHotel.php" DesignTimeRectangle="245, 842, 375, 38" ElementType="DropDown" FriendlyName="'0 - None'" FullSelectorArgument="&lt;webctrl id='child_room' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='child_room' tag='SELECT' type='' aaname='' /&gt;" Guid="d37744c7-6857-436d-be06-80ce1ff02aa3" ImageBase64="" InformativeScreenshot="d18b2509303fe2854910a623b11f6419.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Adactin.com - Search Hotel' /&gt;" SearchSteps="Selector">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="11, 839, 231, 44" ElementType="Text" FriendlyName="'Children per Room'" FullSelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableRow='9' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search_form' tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' aaname='Children per Room ' check:text='Children per Room' /&gt;" ImageBase64="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" SearchSteps="Selector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" Description="Select Childrens Per Room" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="334,134.666666666667" sap2010:WorkflowViewState.IdRef="StepStatus_8" Name="Childrens Per Room" Status="Compare" TakeScreenshot="True" />
+            <uix:NClick ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="728cb3a6-c02e-48d7-8258-6f2404b3041f" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="http://adactinhotelapp.com/SearchHotel.php" DesignTimeRectangle="245, 901, 150, 45" ElementType="Button" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' aaname='Search' check:text='Search' /&gt;" Guid="ec38757c-a2f2-4da3-b7a8-5b1435f799b9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAAxCAYAAAAiJLA6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAKXSURBVHhe7d29bQJBEMVxCqILKqEJAjpABORUQkZOSkxMBiWs9SyN9Rjv3J1OMN61XvCT5fviYP7shSwej0cR+TSFJikUmqR4Ce18Ppfdblc2m43IbGgILXFbP6Fhx36/L9frtTyfT5HZ0BBa4th+QkOFikzeBS2hqV+hYcmrnSAyF5pSaPJxCk1SKDRJodAkhUKTFApNUig0SaHQJIVCkxQKTVL8m9COx2NZLBYvVqtVud1u1eNbd7lcynK5/H4f2+22ekxPug/tfr+X9Xr9KzJ2Op2q57ZMoTWmtpJ5Pa5sCq0hfjXjlcvvQ5B8busUWkM4JvzF/7wf4Vlofli1R240UB66wf/Yzsfx6x0Oh/BLwMcZ/0Xwoflzeouv69AAH7h9+LXYavAYxeOUBxddoxYFGwsI+NHN9+txPLW4vZ5i6z60oYFwBMyGzQFwJLa6RCsmH8vD5u1jK56d56O3e/bvy7bz8Xz/res+NOAB1kQrhX9cWYBjKyNfIwqNtwNH6wPBffht/Br+fuw+azG36l+EZvzqwGzwY1FCtFJwLCYKzUfM9zYWMkQxg0JrDA/e4pkSGg+QB16j0KbpOrShwRo/lCnnGL9CWiBRBAot1nVoPAzAoHk/D96GMjRALwonusZQaPzYtdWVz/PRDN2nQvsD9qGPsVWEBw4WZ22wHI5t8+dzBEOh+f3R9ew8hdYY/3ir8SsID9Hj4U25tgWM48dCA4ukhq+l0BqFwfLQTDRwv5IAD9r42Gy49no87CmhAR8XHa/QRGZQaJJCoUkKhSYpFJqkUGiSQqFJCoUmKRSapFBokkKhSQqFJikUmqSohqbfGZB3Cn9nQL+cIu+ChsJfTrHYUCGWPJG50BBHBi+hiXzGo3wB7wO50SaiY7kAAAAASUVORK5CYII=" InformativeScreenshot="d8621882bdaa58237fd12e1762d15883.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Adactin.com - Search Hotel' /&gt;" SearchSteps="Selector, Image" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="89780da2ecabc1ff824ab435aacf4906.png" Selector="&lt;html app='chrome.exe' title='Adactin.com - Search Hotel'/&gt;" Url="http://adactinhotelapp.com/SearchHotel.php" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
